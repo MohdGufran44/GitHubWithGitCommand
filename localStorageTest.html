@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age Validator App</title>
+	<style>
+		#p1{
+			text-align:center;
+			color:red;
+			font-size:30px;
+			font-weight: bold;
+		}
+		#p2{
+			text-align:center;
+			color:green;
+			font-size:30px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body onload="validator()">
+    <p id="p1"></p>
+	<p id="p2"></p>
+	<script>
+		
+		function validator(){
+			var randomNumber=Math.floor(Math.random() * 10 + 1);
+			var guessNum= localStorage.getItem("guessNumber");
+			console.log(guessNum);
+			if(guessNum == randomNumber) {     
+				   //alert("CONGRATULATIONS!!! YOU GUESSED"); 
+				   document.getElementById("p2").innerText="CONGRATULATIONS!!! YOU GUESSED";
+			   } 
+			   else{
+				   //alert("OOPS SORRY!! TRY AGAIN") 
+				   document.getElementById("p1").innerText="OOPS SORRY!! TRY AGAIN";
+			   }
+		}
+	</script>
+</body>
+</html>

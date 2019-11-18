@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age Validator App</title>
+	<style>
+		#p1{
+			text-align:center;
+			color:red;
+			font-size:30px;
+			font-weight: bold;
+		}
+		#p2{
+			text-align:center;
+			color:green;
+			font-size:30px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body onload="validator()">
+    <p id="p1"></p>
+	<p id="p2"></p>
+	<script>
+		
+		function validator(){
+			var name= sessionStorage.getItem("name");
+			var age= sessionStorage.getItem("age");
+			if(age<18){
+				document.getElementById("p1").innerText=name+" is Not Eligible for vote. Age is "+age;
+			}
+			else{
+				document.getElementById("p2").innerText=name+" is Eligible for vote. Age is "+age;
+			}
+		}
+	</script>
+</body>
+</html>

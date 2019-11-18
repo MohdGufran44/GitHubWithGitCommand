@@ -5,20 +5,19 @@
     <title>Age Validator App</title>
 </head>
 <body>
-    <form action="#" onsubmit="ageValidator()">
+    <form action="resultValidator.html" onsubmit="sessionTest()">
 		Person Name:  
-		<input type="text" name="pname"><br>
+		<input type="text" id="pname"><br>
 		Person Age:  
-		<input type="text" name="age"><br>
+		<input type="text" id="age"><br>
 		<input type="submit" value="Submit">
 	</form>
 	<script>
-		function ageValidator(){
-			var a=document.getElementByName("age");
-			console.log(a);
-			if(a<18){
-				alert("Please Enter Correct Age");
-			}
+		function sessionTest(){
+			var pName= document.getElementById("pname").value;
+			var pAge= document.getElementById("age").value;
+			sessionStorage.setItem("name", pName);
+			sessionStorage.setItem("age", pAge);
 		}
 	</script>
 </body>
